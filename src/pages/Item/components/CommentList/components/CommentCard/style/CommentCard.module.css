@@ -1,0 +1,13 @@
+.commentSize {
+    max-width: 50%;
+    min-width: 320px;
+}
+
+.cursorPoint {
+    cursor: pointer;
+}
+
+.whitespace {
+    white-space: pre-line;
+    overflow-wrap: break-word;
+}

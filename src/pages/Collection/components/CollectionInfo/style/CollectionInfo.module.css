@@ -1,0 +1,36 @@
+.whitespace {
+    white-space: pre-line;
+    overflow-wrap: break-word;
+}
+
+.textWidth {
+    max-width: 65%;
+}
+
+@media screen and (max-width: 956px) {
+    .textWidth {
+        max-width: 100%;
+    }
+}
+
+.paperDarkbg {
+    background-color: #25262b;
+    border: 1px solid #373A40;
+}
+
+.fullwidth {
+    width: 100%;
+}
+
+.markdown {
+    white-space: pre-wrap;
+    background-color: transparent;
+}
+
+.maxWidth300 {
+    max-width: 300px;
+}
+
+.textDark {
+    color: black
+}
