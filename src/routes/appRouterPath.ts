@@ -1,5 +1,4 @@
 export enum AppRouterPath {
-    Root = "/",
     Other = "/*",
     NotFound = "/404-not-found",
     Main = "/main",

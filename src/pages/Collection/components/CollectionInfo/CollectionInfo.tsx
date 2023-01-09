@@ -51,7 +51,7 @@ export const CollectionInfo: FC<PropsType> = ({ collection }) => {
             >
               <MDEditor.Markdown
                 source={description || ''}
-                className={`${s.markdown} ${colorScheme === 'light' ? s.textDark : ''}`}
+                className={`${s.markdown} ${colorScheme === 'light' ? s.textDark : s.textLight}`}
               />
             </Spoiler>
           </Text>

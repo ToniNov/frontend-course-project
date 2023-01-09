@@ -1,0 +1,33 @@
+.cardWidth {
+    width: 300px;
+}
+
+.selectWidth {
+    width: 100px;
+}
+
+.positionRelative {
+    position: relative;
+}
+
+.positionAbsolute {
+    position: absolute;
+    z-index: 1;
+}
+
+.badgeHover:hover {
+    cursor: pointer;
+}
+
+.markdown {
+    white-space: pre-wrap;
+    background-color: transparent;
+}
+
+.textDark {
+    color: black;
+}
+
+.textLight {
+    color: #b6b3b3;
+}

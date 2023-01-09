@@ -7,8 +7,8 @@ import { useTranslation } from 'react-i18next';
 import { CSVButton, ItemFormModal, ItemsTools } from './components';
 import { useSuccessDelete } from './hooks';
 import { PropsType } from './types';
-import { useAppSelector } from '../../../../../../app/store/store';
-import {selectIsAdmin, selectUserId } from '../../../../../../features/application/selectors';
+import { useAppSelector } from '../../../../../../app/store/';
+import { selectUserId } from '../../../../../../features/application/selectors';
 import {useDeleteItemsMutation} from "../../../../../../api/items/itemsApi";
 
 
@@ -25,8 +25,7 @@ export const ItemsTableToolbar: FC<PropsType> = ({
   const { limit, page } = paginationProps;
   const isCollectionEmpty = collectionItemsData.items.length === 0;
   const ownerId = useAppSelector(selectUserId);
-  const isAdmin = useAppSelector(selectIsAdmin);
-  const isOwnerOrAdmin = ownerId === collectionData.owner || isAdmin;
+  const isOwnerOrAdmin = ownerId === collectionData.owner ;
 
   const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);

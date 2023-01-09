@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import {LoadingOverlay, MantineProvider, Notification} from "@mantine/core";
-import {useAppDispatch, useAppSelector} from './store/store';
+import {useAppDispatch, useAppSelector} from './store';
 import { IconX } from '@tabler/icons';
 import {
     selectColorScheme, selectErrorMessage, selectErrorTitle,
@@ -14,7 +14,7 @@ import '../localization/i18n';
 
 const HIDE_ERROR_DELAY = 5000;
 
-const App =()=> {
+const App = () => {
 
     const dispatch = useAppDispatch();
     const [authCheck, { isFetching, isError }] = useLazyAuthCheckQuery();

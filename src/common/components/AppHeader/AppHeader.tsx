@@ -12,7 +12,6 @@ import {
 import {
     IconAlphabetCyrillic,
     IconAlphabetLatin,
-    IconHome,
     IconMoonStars,
     IconSearch,
     IconSun,
@@ -34,7 +33,7 @@ import {
     toggleLocale
 } from "../../../features/application/applicationSlice";
 import {AppRouterPath} from "../../../routes/appRouterPath";
-import {useAppDispatch, useAppSelector} from "../../../app/store/store";
+import {useAppDispatch, useAppSelector} from "../../../app/store/";
 import {useTranslation} from "react-i18next";
 import {GeneralModal} from "../../modal/GeneralModal";
 import {GradientText} from "../Text/GradientText";

@@ -8,7 +8,7 @@ export const fileUploadApi = createApi({
   endpoints: builder => ({
     uploadImage: builder.mutation<any, FormData>({
       query: body => ({
-        url: `upload?expiration=600&key=${process.env.REACT_APP_CLOUD_API_KEY}`,
+        url: `upload?expiration=1555200&key=${process.env.REACT_APP_CLOUD_API_KEY}`,
         method: 'POST',
         body,
       }),

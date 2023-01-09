@@ -11,13 +11,14 @@ import {CollectionCardMenu} from './CollectionCardMenu';
 import {ItemsFieldsAccordion} from './ItemsFieldsAccordion';
 
 import {AppRouterPath} from "../../../routes/appRouterPath";
-import {useAppSelector} from '../../../app/store/store';
+import {useAppSelector} from '../../../app/store';
 import {
     selectColorScheme,
     selectIsAdmin,
     selectUserId
 } from '../../../features/application/selectors';
 import {PropsType} from "./types";
+import s from './style/CollectionCard.module.css';
 
 export const CollectionCard: FC<PropsType> = ({
                                                   collection,
@@ -25,13 +26,13 @@ export const CollectionCard: FC<PropsType> = ({
                                                   setShowForm,
                                               }) => {
     const navigate = useNavigate();
-    const {t} = useTranslation();
+    const { t } = useTranslation();
     const colorScheme = useAppSelector(selectColorScheme);
     const isAdmin = useAppSelector(selectIsAdmin);
     const userId = useAppSelector(selectUserId);
     const {
         id,
-        owner: {id: ownerId, name: ownerName},
+        owner: { id: ownerId, name: ownerName },
         image,
         description,
         itemFields,
@@ -47,34 +48,15 @@ export const CollectionCard: FC<PropsType> = ({
 
     const onOwnerBadgeClick: MouseEventHandler<HTMLDivElement> = e => {
         e.stopPropagation();
-        navigate(`${AppRouterPath.Collection}/${ownerId}`);
+        navigate(`${AppRouterPath.User}/${ownerId}`);
     };
-
-    const positionAbsolute = {
-        position: "absolute",
-        zIndex: "1",
-    };
-
-    const badgeHover = {
-        cursor: "pointer",
-    };
-
-    const markdown = {
-        whiteSpace: "pre-wrap",
-        backgroundColor: "transparent",
-    };
-
-    const textDark = {
-        color: "black"
-    };
-
 
     return (
         <Card
             withBorder
             shadow="sm"
             radius="md"
-            style={{width: "300px"}}
+            className={s.cardWidth}
             onClick={onCardClick}
         >
             <Card.Section>
@@ -92,19 +74,19 @@ export const CollectionCard: FC<PropsType> = ({
                 </Group>
             </Card.Section>
             <Card.Section withBorder>
-                <Box style={{position: "relative"}}>
+                <Box className={s.positionRelative}>
                     <Badge
-                        className={`${positionAbsolute} ${badgeHover}`}
+                        className={`${s.positionAbsolute} ${s.badgeHover}`}
                         size="xs"
                         variant="gradient"
-                        gradient={{from: 'indigo', to: 'cyan'}}
+                        gradient={{ from: 'indigo', to: 'cyan' }}
                         ml={3}
                         mt={3}
                         title={t('title_owner')}
                         onClick={onOwnerBadgeClick}
                     >
                         <Group spacing={3}>
-                            <IconUser size={12}/>
+                            <IconUser size={12} />
                             {ownerName}
                         </Group>
                     </Badge>
@@ -122,15 +104,14 @@ export const CollectionCard: FC<PropsType> = ({
                 <Text size="sm" lineClamp={4}>
                     <MDEditor.Markdown
                         source={description}
-                        className={`${markdown} ${colorScheme === 'light' ? textDark : ''}`}
+                        className={`${s.markdown} ${colorScheme === 'light' ? s.textDark : s.textLight}`}
                     />
                 </Text>
             </Card.Section>
-            {itemFields.length > 0 && <ItemsFieldsAccordion itemFields={itemFields}/>}
+            {itemFields.length > 0 && <ItemsFieldsAccordion itemFields={itemFields} />}
             <Card.Section p="xs">
-                <BadgesList topics={topics}/>
+                <BadgesList topics={topics} />
             </Card.Section>
         </Card>
     );
-
 };
