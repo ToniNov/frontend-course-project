@@ -1,12 +1,11 @@
 import {FC, useEffect} from 'react';
 import LoginGithub from 'react-login-github';
-import {useAppDispatch} from "../../../../../app/store/store";
+import {useAppDispatch} from "../../../../../app/store";
 import {useGithubSignInMutation} from '../../../../../api/auth/authApi';
 import {setRememberMe} from "../../../../../features/application/applicationSlice";
-import {GithubButton} from "../../../SocialButtons/SocialButtons";
 import {GithubIcon} from "../../../SocialButtons/GithubIcon";
 
-const clientId = process.env.REACT_APP_GITHUB_CLIENT_ID;
+const CLIENT_ID = process.env.REACT_APP_GITHUB_CLIENT_ID;
 
 type PropsType = {
     rememberMe: boolean;
@@ -25,17 +24,21 @@ export const LogInGithub: FC<PropsType> = ({ rememberMe, setOpened }) => {
     }, [dispatch, isSuccess, rememberMe, setOpened]);
 
     const onSuccess = ({ code }: any): void => {
+
+        console.log(code)
+
         githubSignIn({ code });
     };
+
     const onFailure = (response: any): void => console.error(response);
 
     return (
         <LoginGithub
-            clientId={clientId}
+            clientId={CLIENT_ID}
             onSuccess={onSuccess}
             onFailure={onFailure}
             scope="user:email"
-            buttonText='Github'
+            type="button"
         >
             <GithubIcon/>
         </LoginGithub>

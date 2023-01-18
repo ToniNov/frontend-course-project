@@ -8,4 +8,5 @@ export enum AppRouterPath {
     Item = '/item',
     Tag = '/tag',
     TagTitle = ':tag',
+    Admin = '/admin',
 }

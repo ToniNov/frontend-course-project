@@ -8,74 +8,88 @@ import {Main} from "../pages/Main";
 import {Layout} from "../common/components/Layout/Layout";
 import {Item} from '../pages/Item';
 import {Tag} from '../pages/Tag';
-import { Collection } from '../pages/Collection';
-import { User } from '../pages/User';
+import {Collection} from '../pages/Collection';
+import {User} from '../pages/User';
+import {Admin} from '../pages/Admin';
+import {AuthCheck} from "./AuthCheck";
 
 export const AppRouter = () => {
-    const appRoutes = useRoutes([
+    return useRoutes([
         {
             index: true,
-            element: <Navigate to={AppRouterPath.Main} />,
+            element: <Navigate to={AppRouterPath.Main}/>,
         },
         {
             path: AppRouterPath.Other,
-            element: <Navigate to={AppRouterPath.NotFound} />,
+            element: <Navigate to={AppRouterPath.NotFound}/>,
         },
         {
             path: AppRouterPath.NotFound,
-            element: <NotFoundPage />,
+            element: <NotFoundPage/>,
         },
         {
             path: AppRouterPath.Main,
-            element: <Layout />,
+            element: <Layout/>,
             children: [
                 {
                     index: true,
-                    element: <Main />,
+                    element: <Main/>,
                 },
             ],
         },
         {
             path: AppRouterPath.User,
-            element: <Layout />,
+            element: <Layout/>,
             children: [
                 {
                     path: AppRouterPath.Id,
-                    element: <User />,
+                    element: <User/>,
                 },
             ],
         },
         {
             path: AppRouterPath.Collection,
-            element: <Layout />,
+            element: <Layout/>,
             children: [
                 {
                     path: AppRouterPath.Id,
-                    element: <Collection />,
+                    element: <Collection/>,
                 },
             ],
         },
         {
             path: AppRouterPath.Item,
-            element: <Layout />,
+            element: <Layout/>,
             children: [
                 {
                     path: AppRouterPath.Id,
-                    element: <Item />,
+                    element: <Item/>,
                 },
             ],
         },
         {
             path: AppRouterPath.Tag,
-            element: <Layout />,
+            element: <Layout/>,
             children: [
                 {
                     path: AppRouterPath.TagTitle,
-                    element: <Tag />,
+                    element: <Tag/>,
                 },
             ],
         },
-        ])
-
-    return appRoutes
+        {
+            path: AppRouterPath.Admin,
+            element: (
+                <AuthCheck>
+                    <Layout/>
+                </AuthCheck>
+            ),
+            children: [
+                {
+                    index: true,
+                    element: <Admin/>,
+                },
+            ],
+        },
+    ])
 };

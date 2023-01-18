@@ -16,7 +16,11 @@ import { CollectionCardsList, CollectionFormModal } from './components';
 import s from './style/User.module.css';
 import { getGreetingMessage } from './utils';
 import { useAppSelector } from '../../app/store';
-import { selectUserId, selectUserName } from '../../features/application/selectors';
+import {
+    selectIsAdmin,
+    selectUserId,
+    selectUserName
+} from '../../features/application/selectors';
 import { CollectionType } from '../../api/collections/types';
 import { useGetUserCollectionsQuery } from '../../api/collections/collectionsApi';
 import { useLazyGetUserNameQuery } from '../../api/users';
@@ -27,6 +31,7 @@ export const User: FC = () => {
   const { id } = useParams();
   const { t } = useTranslation();
   const userId = useAppSelector(selectUserId);
+  const isAdmin = useAppSelector(selectIsAdmin);
   const loggedUserName = useAppSelector(selectUserName);
   const [openModal, setOpenModal] = useState(false);
   const [collectionForEdit, setCollectionForEdit] = useState<CollectionType | null>(null);
@@ -45,9 +50,8 @@ export const User: FC = () => {
     setCollectionForEdit(null);
     setOpenModal(true);
   };
-  //todo
-  //const isOwnerOrAdmin = userId === id || isAdmin;
-  const isOwnerOrAdmin = userId === id
+
+  const isOwnerOrAdmin = userId === id || isAdmin;
 
   return (
     <Container size="xl">

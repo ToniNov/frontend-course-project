@@ -15,12 +15,14 @@ import {
     IconMoonStars,
     IconSearch,
     IconSun,
+    IconTableOptions,
     IconUser,
 } from '@tabler/icons';
 import {useNavigate} from 'react-router-dom';
 
 import {
     selectColorScheme,
+    selectIsAdmin,
     selectIsDark,
     selectIsEnglish,
     selectIsSignedIn,
@@ -50,6 +52,7 @@ export const AppHeader = () => {
     const isDark = useAppSelector(selectIsDark);
     const colorScheme = useAppSelector(selectColorScheme);
     const isEnglish = useAppSelector(selectIsEnglish);
+    const isAdmin = useAppSelector(selectIsAdmin);
 
     const [hasAccount, setHasAccount] = useState(true);
     const [isSignOpened, setIsSignOpened] = useState(false);
@@ -127,6 +130,16 @@ export const AppHeader = () => {
                             onLabel={<IconSun color="Orange" size={20} stroke={1.5}/>}
                             offLabel={<IconMoonStars color="black" size={20} stroke={1.5}/>}
                         />
+                        {isAdmin && (
+                            <ActionIcon
+                                variant="default"
+                                onClick={() => navigate(AppRouterPath.Admin)}
+                                size={30}
+                                title={t('button_adminPanel')}
+                            >
+                                <IconTableOptions size={18} />
+                            </ActionIcon>
+                        )}
                         {isSignedIn ? (
                             <Button
                                 variant="default"

@@ -1,7 +1,7 @@
 import { FC, useEffect } from 'react';
 import { ActionIcon } from '@mantine/core';
 import { gapi } from 'gapi-script';
-import {useAppDispatch} from "../../../../../app/store/store";
+import {useAppDispatch} from "../../../../../app/store";
 import {setRememberMe} from '../../../../../features/application/applicationSlice';
 import GoogleLogin from 'react-google-login';
 import {GoogleIcon} from "../../../SocialButtons/GoogleIcon";
@@ -32,7 +32,6 @@ export const LoginGoogle: FC<PropsType> = ({ signIn, rememberMe }) => {
       name: res.profileObj.name,
     };
     const body = { email: res.profileObj.email, googleData, password: res.tokenId };
-
     signIn(body);
     dispatch(setRememberMe(rememberMe));
   };
@@ -53,7 +52,7 @@ export const LoginGoogle: FC<PropsType> = ({ signIn, rememberMe }) => {
           variant="default"
           title="Google"
         >
-          <GoogleIcon>Google</GoogleIcon>
+          <GoogleIcon/>
         </ActionIcon>
       )}
     />

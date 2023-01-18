@@ -15,7 +15,7 @@ import {
 import { useForm, yupResolver } from '@mantine/form';
 import { useTranslation } from 'react-i18next';
 import * as Yup from 'yup';
-import {useAppDispatch} from "../../../../app/store/store";
+import {useAppDispatch} from "../../../../app/store";
 import {useSignInMutation} from "../../../../api/auth/authApi";
 import {setRememberMe} from "../../../../features/application/applicationSlice";
 import {LoginGoogle} from "./LoginGoogle/LoginGoogle";

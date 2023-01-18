@@ -1,0 +1,11 @@
+.positionRelative {
+    position: relative;
+}
+
+.widthFull {
+    width: 100%;
+}
+
+.conteinerHeight {
+    min-height: calc(100vh - 52px);
+}
