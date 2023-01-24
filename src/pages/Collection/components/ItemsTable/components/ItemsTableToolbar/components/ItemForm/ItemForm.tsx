@@ -25,6 +25,8 @@ export const ItemForm: FC<PropsType> = ({
 }) => {
   const { t } : i18translateType = useTranslation();
 
+  console.log("ItemForm Rend")
+
   const [getItem, { data: itemData, isFetching: isItemDataFetching }] =
     useLazyGetItemQuery();
   const [
@@ -65,6 +67,7 @@ export const ItemForm: FC<PropsType> = ({
   }, [isCreateItemSuccess, isUpdateItemSuccess, resetCreateItem, setShowForm]);
 
   const onSubmit = (data: any): void => {
+    debugger
     if (itemId) {
       updateItem({
         id: itemId,

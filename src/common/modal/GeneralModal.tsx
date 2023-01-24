@@ -10,13 +10,11 @@ type GeneralModalPropsType = {
 
 export const GeneralModal: FC<GeneralModalPropsType> = ({openedModal, setOpenedModal, children, title}) => {
     return (
-
         <Modal centered
                opened={openedModal}
                onClose={() => setOpenedModal(false)}
                title={title}>
             {children}
         </Modal>
-
     );
 }

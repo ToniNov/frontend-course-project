@@ -26,6 +26,9 @@ const App = () => {
     const timerId = useRef<ReturnType<typeof setTimeout>>();
     const isAppInitialized = !token || isSignedIn || isError;
 
+    console.log(errorTitle)
+    console.log(errorMessage)
+
     useEffect(() => {
         if (!isSignedIn && token) authCheck();
     }, [authCheck, isSignedIn, token]);
@@ -57,7 +60,7 @@ const App = () => {
             {errorTitle && (
                 <Notification
                     p="sm"
-                    style={{position: "fixed", bottom: "10px", right: "10px", zIndex: "10"}}
+                    style={{position: "fixed", bottom: "10px", right: "10px", zIndex: "1000000"}}
                     title={errorTitle}
                     icon={<IconX size={18} />}
                     color="red"

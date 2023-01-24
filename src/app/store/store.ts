@@ -6,6 +6,7 @@ import {applicationApi} from "../../api/applicationApi";
 import {appReducer} from "../../features/application/applicationSlice";
 import {loadState, saveItem} from "../../common/utils/storage";
 import { fileUploadApi } from '../../api/collections/fileUploadApi';
+import { errorMiddleware } from './errorMiddleware';
 
 const SAVE_THROTTLE = 1000;
 
@@ -24,6 +25,7 @@ export const store = configureStore({
         })
             .concat(applicationApi.middleware)
             .concat(fileUploadApi.middleware)
+            .concat(errorMiddleware),
 });
 
 store.subscribe(

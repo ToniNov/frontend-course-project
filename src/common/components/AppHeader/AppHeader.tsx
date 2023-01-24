@@ -65,7 +65,7 @@ export const AppHeader = () => {
         <Header height={60} p="sm">
             <Container size="xl">
                 <Group align="center" position="apart" noWrap>
-                    <Group spacing="xl" align="center" position="left">
+                    <Group spacing="xl" align="center" position="left" noWrap>
 
                         <ActionIcon
                             variant="transparent"
@@ -89,7 +89,7 @@ export const AppHeader = () => {
                         )}
                     </Group>
 
-                    <Group spacing="xs" >
+                    <Group spacing="sm" noWrap >
 
                         <Button
                             color={isDark ? 'gray' : 'dark'}
