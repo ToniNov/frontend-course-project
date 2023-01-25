@@ -3,8 +3,9 @@ import { FC, MouseEventHandler } from 'react';
 import { ActionIcon, Menu } from '@mantine/core';
 import { IconDots, IconEdit, IconTrash } from '@tabler/icons';
 import { useTranslation } from 'react-i18next';
-import {CollectionResponseType, CollectionType} from "../../../../api/collections/types";
-import { useDeleteCollectionMutation } from '../../../../api/collections/collectionsApi';
+
+import {CollectionResponseType, CollectionType} from "../../../../api/collections";
+import { useDeleteCollectionMutation } from '../../../../api/collections';
 
 type PropsType = {
   setCollectionForEdit: (col: CollectionType) => void;

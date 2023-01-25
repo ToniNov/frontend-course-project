@@ -10,9 +10,12 @@ import { useFillFieldsForEdit } from './hooks';
 import s from './style/ItemForm.module.css';
 import { PropsType } from './types';
 import { getItemSchema, getNewItem, getUpdatePayload } from './utils';
-
-import {i18translateType} from "../../../../../../../../localization/type";
-import {useCreateItemMutation, useLazyGetItemQuery, useUpdateItemMutation} from "../../../../../../../../api/items/itemsApi";
+import {i18translateType} from "../../../../../../../../localization";
+import {
+  useCreateItemMutation,
+  useLazyGetItemQuery,
+  useUpdateItemMutation
+} from "../../../../../../../../api/items";
 
 export const ItemForm: FC<PropsType> = ({
   setShowForm,

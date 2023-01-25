@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 import { SortButton } from './components';
 import { PropsType } from './types';
-import {i18translateType} from "../../../../../../localization/type";
+import {i18translateType} from "../../../../../../localization";
 
 export const ItemsTableHead: FC<PropsType> = ({
   itemFields,

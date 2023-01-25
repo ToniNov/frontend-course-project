@@ -16,11 +16,11 @@ import { useForm, yupResolver } from '@mantine/form';
 import { useTranslation } from 'react-i18next';
 import * as Yup from 'yup';
 import {useAppDispatch} from "../../../../app/store";
-import {useSignInMutation} from "../../../../api/auth/authApi";
+import {useSignInMutation} from "../../../../api/auth";
 import {setRememberMe} from "../../../../features/application/applicationSlice";
 import {LoginGoogle} from "./LoginGoogle/LoginGoogle";
 import {LogInGithub} from "./LogInGithub/LogInGithub";
-import {i18translateType} from "../../../../localization/type";
+import {i18translateType} from "../../../../localization";
 
 type PropsType = {
     setHasAccount: (val: boolean) => void;

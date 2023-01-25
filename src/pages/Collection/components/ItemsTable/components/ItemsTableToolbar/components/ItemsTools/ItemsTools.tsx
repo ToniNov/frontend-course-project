@@ -5,7 +5,7 @@ import { IconEdit, IconHash } from '@tabler/icons';
 import { useTranslation } from 'react-i18next';
 
 import { PropsType } from './types';
-import {i18translateType} from "../../../../../../../../localization/type";
+import {i18translateType} from "../../../../../../../../localization";
 
 export const ItemsTools: FC<PropsType> = ({
   selectedTagsProps: { selectedTags, setSelectedTags },

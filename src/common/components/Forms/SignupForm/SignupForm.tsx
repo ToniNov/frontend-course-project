@@ -15,8 +15,9 @@ import {
 import { useForm, yupResolver } from '@mantine/form';
 import { useTranslation } from 'react-i18next';
 import * as Yup from 'yup';
-import {useSignUpMutation} from "../../../../api/auth/authApi";
-import {i18translateType} from "../../../../localization/type";
+
+import {useSignUpMutation} from "../../../../api/auth";
+import {i18translateType} from "../../../../localization";
 
 type PropsType = {
     setHasAccount: (val: boolean) => void;

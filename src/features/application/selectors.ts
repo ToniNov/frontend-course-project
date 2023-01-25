@@ -1,7 +1,8 @@
-import {RootState} from "../../app/store/store";
 import {ColorScheme} from "@mantine/core";
+
+import {RootState} from "../../app/store";
 import {LanguageType} from "./types";
-import {UserAccessType} from "../../api/auth/types";
+import {UserAccessType} from "../../api/auth";
 
 export const selectColorScheme = (state: RootState): ColorScheme => state.app.colorScheme;
 export const selectIsDark = (state: RootState): boolean =>

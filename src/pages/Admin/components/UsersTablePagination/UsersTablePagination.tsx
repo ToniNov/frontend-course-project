@@ -4,7 +4,7 @@ import { Group, Pagination, Select } from '@mantine/core';
 import { useTranslation } from 'react-i18next';
 
 import { PropsType } from './types';
-import {i18translateType} from "../../../../localization/type";
+import {i18translateType} from "../../../../localization";
 
 export const UsersTablePagination: FC<PropsType> = ({
   onLimitChange,

@@ -3,10 +3,10 @@ import { FC } from 'react';
 import { Stack } from '@mantine/core';
 
 import { SearchItem } from './SearchItem';
-import { SearchByQueryResponse } from '../../../../../api/search/types';
+import { SearchByQueryResponseType } from '../../../../../api/search';
 
 type PropsType = {
-  searchData: SearchByQueryResponse | undefined;
+  searchData: SearchByQueryResponseType | undefined;
 };
 
 export const SearchResultsList: FC<PropsType> = ({ searchData }) => {

@@ -7,9 +7,9 @@ import { useTranslation } from 'react-i18next';
 
 import s from './style/ItemFieldPicker.module.css';
 import { PropsType } from './types';
-import { useAppSelector } from '../../../../../../../../../../../app/store/store';
+import { useAppSelector } from '../../../../../../../../../../../app/store';
 import {selectColorScheme, selectLocale } from '../../../../../../../../../../../features/application/selectors';
-import {i18translateType} from "../../../../../../../../../../../localization/type";
+import {i18translateType} from "../../../../../../../../../../../localization";
 
 
 export const ItemFieldPicker: FC<PropsType> = ({ field, onChange, value, error }) => {

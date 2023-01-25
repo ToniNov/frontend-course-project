@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 
 import { useSelfBlockOrAccessDowngrade, useSelfDelete } from './hooks';
 import { PropsType } from './types';
-import {i18translateType} from "../../../../localization/type";
+import {i18translateType} from "../../../../localization";
 import {useDeleteUsersMutation, useUpdateUsersMutation} from '../../../../api/users';
 import { useAppDispatch, useAppSelector } from '../../../../app/store';
 import {selectUserId} from "../../../../features/application/selectors";

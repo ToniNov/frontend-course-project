@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 import { PropsType } from './types';
 import { PAGE_LIMIT_SELECT_DATA } from '../../../../../../common/constant';
-import {i18translateType} from "../../../../../../localization/type";
+import {i18translateType} from "../../../../../../localization";
 
 
 export const ItemsPagination: FC<PropsType> = ({
