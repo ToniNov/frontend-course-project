@@ -1,2 +1,3 @@
 export { useCreateCommentMutation, useGetCommentsQuery } from './commentsApi';
-export type { CommentResponseType } from './types';
+
+export type { CommentResponseType, CreateCommentRequestType } from './types';

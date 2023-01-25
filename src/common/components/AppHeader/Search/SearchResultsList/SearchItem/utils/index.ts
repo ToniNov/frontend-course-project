@@ -1,4 +1,4 @@
-import {SearchItemTypeType} from "../../../../../../../api/search/types";
+import {SearchItemTypeType} from "../../../../../../../api/search";
 import i18n from "../../../../../../../localization/i18n";
 
 export const getItemTypeLocalization = (type: SearchItemTypeType): string => {

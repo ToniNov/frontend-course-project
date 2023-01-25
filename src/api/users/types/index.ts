@@ -1,4 +1,4 @@
-import { UserAccessType, UserStatusType } from '../../auth/types';
+import { UserAccessType, UserStatusType } from '../../auth';
 
 export type UserType = {
   id: string;

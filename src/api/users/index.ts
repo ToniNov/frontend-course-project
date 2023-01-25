@@ -4,4 +4,12 @@ export {
   useUpdateUsersMutation,
   useLazyGetUserNameQuery,
 } from './usersApi';
-export type { UserType } from './types';
+
+export type {
+  UserType,
+  DeleteUsersRequestBodyType,
+  GetAllUsersRequestQueryType,
+  GetAllUsersResponseBodyType,
+  UpdateUsersRequestBodyType,
+  UpdateUsersResponseBodyType
+} from './types';

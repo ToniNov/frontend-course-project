@@ -6,8 +6,7 @@ import {
   GetAllUsersResponseBodyType,
   UpdateUsersRequestBodyType,
   UpdateUsersResponseBodyType,
-} from './types';
-
+} from '.';
 
 export const usersApi = applicationApi.injectEndpoints({
   endpoints: builder => ({

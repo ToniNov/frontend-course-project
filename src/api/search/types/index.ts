@@ -1,10 +1,11 @@
-export type SearchByQueryRequest = {
+export type SearchByQueryRequestType = {
   query: string;
 };
 
 export type SearchItemTypeType = 'Item' | 'Collection' | 'Comment';
 
 export type HighlightTextType = { type: 'hit' | 'text'; value: string };
+
 export type HighlightType = {
   path: string;
   score: number;
@@ -18,4 +19,4 @@ export type SearchItemType = {
   type: SearchItemTypeType;
 };
 
-export type SearchByQueryResponse = SearchItemType[];
+export type SearchByQueryResponseType = SearchItemType[];

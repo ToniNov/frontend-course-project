@@ -1,10 +1,11 @@
 import {applicationApi} from "../applicationApi";
 import {
-    CollectionResponseType, CreateCollectionRequestType,
-    CreateCollectionResponseType,
+    CollectionResponseType,
+    CreateCollectionRequestType,
+    CreateCollectionResponseType, DeleteCollectionRequestType,
     GetUserCollectionsResponseType,
     UpdateCollectionRequestBodyType,
-    UpdateCollectionRequestParamType
+    UpdateCollectionRequestParamType,
 } from "./types";
 
 export const collectionsApi = applicationApi.injectEndpoints({
@@ -118,7 +119,7 @@ export const collectionsApi = applicationApi.injectEndpoints({
                 });
             },
         }),
-        deleteCollection: builder.mutation<void, { id: string; userId: string }>({
+        deleteCollection: builder.mutation<void, DeleteCollectionRequestType>({
             query: body => ({
                 url: `/collection/${body.id}`,
                 method: 'DELETE',

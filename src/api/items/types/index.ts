@@ -1,4 +1,4 @@
-import { FieldType } from "../collections/types";
+import {FieldType} from "../../collections";
 
 export type ItemFieldType = FieldType & { value: string | Date | boolean | number };
 

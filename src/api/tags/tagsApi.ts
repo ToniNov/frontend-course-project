@@ -1,10 +1,9 @@
+import { GetTagsResponseType } from ".";
 import {applicationApi} from "../applicationApi";
-
-export type GetTagsResponse = { value: string; count: number }[];
 
 export const tagsApi = applicationApi.injectEndpoints({
   endpoints: builder => ({
-    getTags: builder.query<GetTagsResponse, void>({
+    getTags: builder.query<GetTagsResponseType, void>({
       query: () => ({
         url: '/tags',
       }),

@@ -40,9 +40,10 @@ export type CreateCollectionResponseType = {
 
 export type GetTopicsResponseType = string[];
 
-export type DeleteCollectionRequestType = { id: string };
+export type DeleteCollectionRequestType = { id: string; userId: string};
 
 export type UpdateCollectionRequestParamType = { id: string };
+
 export type UpdateCollectionRequestBodyType = {
     owner: string;
     title: string;
@@ -51,6 +52,7 @@ export type UpdateCollectionRequestBodyType = {
     topics: string[];
     itemFields: FieldType[];
 };
+
 export type UpdateCollectionResponseType = {
     id: string;
     title: string;

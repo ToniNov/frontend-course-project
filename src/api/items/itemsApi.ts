@@ -10,8 +10,7 @@ import {
   GetTenLatestResponse,
   ItemType,
   UpdateItemRequestType,
-} from './types';
-
+} from '.';
 
 export const itemsApi = applicationApi.injectEndpoints({
   endpoints: builder => ({

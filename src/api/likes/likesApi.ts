@@ -7,7 +7,7 @@ import {
   GetItemLikesRequestType,
   GetItemLikesResponseType,
   LikeType,
-} from './types';
+} from '.';
 
 
 export const likesApi = applicationApi.injectEndpoints({
